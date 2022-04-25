@@ -64,9 +64,12 @@ foreach ($api['results'] as $key => $value) {
     <p class="card-text"><?php echo $air_date?></p>
     <p class="card-text"><?php echo $episode?></p>
     <p class="card-text"><?php echo $created?></p>
+    <form action="detalle.php" value="" method="POST">
+    <input name="url" class="input" value="<?php echo $url ?>">
     <div style="text-align:center; ">
-    <a href="#" class="btn btn-primary" style="width:40%">Detalle</a>
+    <button type="submit" class="btn btn-primary" style="width:40%">Detalle</button>
     </div>
+    </form>
   </div>
   </div>
 </div>
