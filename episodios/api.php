@@ -29,14 +29,32 @@ $api = json_decode($response,true);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./api.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+  </script>
   <title>Document</title>
 </head>
 <body>
-
-   
+  <div class="contrick">
+<div class="topnav" id="myTopnav">
+  <a href="/project_rick_and_morthy/episodios/api.php">Capitulos</a>
+  <a href="/project_rick_and_morthy/Personajes/person.php">Personajes</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
     
         <div class="p-3">
-        <h1 style="text-align: center; color:black; font-weight:bold;">Episodios Rick and Morty</h1>
+        <h1 class="titurick">Episodios Rick and Morty</h1>
         </div>
         <div class="fondo">
        
@@ -64,10 +82,10 @@ foreach ($api['results'] as $key => $value) {
     <p class="card-text"><?php echo $air_date?></p>
     <p class="card-text"><?php echo $episode?></p>
     <p class="card-text"><?php echo $created?></p>
-    <form action="detalle.php" value="" method="POST">
-    <input name="url" class="input" value="<?php echo $url ?>">
+    <form action="../Det_episodio/detalle.php" value="" method="POST">
+    <input name="url" class="input" value="<?php echo $url ?>" style="display: none;">
     <div style="text-align:center; ">
-    <button type="submit" class="btn btn-primary" style="width:40%">Detalle</button>
+    <button type="submit" class="btn btn-danger" style="width:40%" >Detalle</button>
     </div>
     </form>
   </div>
@@ -82,6 +100,7 @@ foreach ($api['results'] as $key => $value) {
     
   </tbody>
 </table>
+    </div>
     </div>
     </div>
 </body>
